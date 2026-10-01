@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>StyleMart</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Connect CSS -->
+    <title>StyleMart - Online Store</title>
+
     <link rel="stylesheet" href="quiz style.css">
 </head>
 
@@ -13,56 +15,89 @@
     <!-- Header -->
     <header>
 
-        <h1>StyleMart</h1>
+        <div class="logo">
+            Style<span>Mart</span>
+        </div>
 
         <nav>
-            <a href="#">Home</a>
-            <a href="#">Products</a>
-            <a href="#">Offers</a>
-            <a href="#">Contact</a>
+            <a href="#home">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#products">Products</a>
+            <a href="#offers">Offers</a>
+            <a href="#contact">Contact</a>
         </nav>
 
-        <span class="cart">🛒 Cart</span>
+        <div class="cart">
+            🛒 Cart <span id="cartCount">0</span>
+        </div>
 
     </header>
 
 
-    <!-- Welcome Section -->
-    <section class="welcome">
+    <!-- Hero Section -->
+    <section class="hero" id="home">
 
-        <div>
-            <h2>Shop Smart, Shop Easy!</h2>
+        <div class="hero-text">
+
+            <p>WELCOME TO STYLE MART</p>
+
+            <h1>
+                Shop Your Favorite
+                <span>Products</span>
+            </h1>
 
             <p>
-                Discover amazing products at great prices.
+                Discover fashion, accessories and electronics
+                at affordable prices.
             </p>
 
-            <button>Shop Now</button>
+            <button onclick="shopNow()">
+                Shop Now
+            </button>
+
+        </div>
+
+        <div class="hero-image">
+            <img
+                src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80"
+                alt="Online Shopping">
         </div>
 
     </section>
 
 
     <!-- Categories -->
-    <section>
+    <section class="section" id="categories">
 
-        <h2 class="title">Popular Categories</h2>
+        <div class="heading">
+            <p>EXPLORE</p>
+            <h2>Shop By Category</h2>
+        </div>
 
         <div class="categories">
 
-            <div class="box">
-                <h3>👗 Women's Fashion</h3>
-                <p>Beautiful clothes and accessories.</p>
+            <div class="category">
+                <div class="icon">👗</div>
+                <h3>Women's Fashion</h3>
+                <p>Trendy clothes and accessories</p>
             </div>
 
-            <div class="box">
-                <h3>👔 Men's Fashion</h3>
-                <p>Stylish clothes for men.</p>
+            <div class="category">
+                <div class="icon">👔</div>
+                <h3>Men's Fashion</h3>
+                <p>Modern styles for men</p>
             </div>
 
-            <div class="box">
-                <h3>💻 Electronics</h3>
-                <p>Useful electronic products.</p>
+            <div class="category">
+                <div class="icon">💻</div>
+                <h3>Electronics</h3>
+                <p>Latest electronic products</p>
+            </div>
+
+            <div class="category">
+                <div class="icon">👜</div>
+                <h3>Accessories</h3>
+                <p>Beautiful accessories</p>
             </div>
 
         </div>
@@ -71,68 +106,124 @@
 
 
     <!-- Products -->
-    <section>
+    <section class="section" id="products">
 
-        <h2 class="title">Latest Products</h2>
+        <div class="heading">
+            <p>OUR PRODUCTS</p>
+            <h2>Popular Products</h2>
+        </div>
+
 
         <div class="products">
 
+            <!-- Product 1 -->
             <div class="product">
 
-                <div class="product-image">
-                    👕
+                <img
+                    src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80"
+                    alt="T Shirt">
+
+                <div class="product-info">
+
+                    <p>Fashion</p>
+
+                    <h3>Summer T-Shirt</h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <h4>$25</h4>
+
+                    <button onclick="addToCart('Summer T-Shirt')">
+                        Add to Cart
+                    </button>
+
                 </div>
-
-                <h3>Summer T-Shirt</h3>
-
-                <p>$25</p>
-
-                <button>Add to Cart</button>
 
             </div>
 
 
+            <!-- Product 2 -->
             <div class="product">
 
-                <div class="product-image">
-                    🎒
+                <img
+                    src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80"
+                    alt="Travel Bag">
+
+                <div class="product-info">
+
+                    <p>Accessories</p>
+
+                    <h3>Travel Bag</h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <h4>$40</h4>
+
+                    <button onclick="addToCart('Travel Bag')">
+                        Add to Cart
+                    </button>
+
                 </div>
-
-                <h3>Travel Bag</h3>
-
-                <p>$40</p>
-
-                <button>Add to Cart</button>
 
             </div>
 
 
+            <!-- Product 3 -->
             <div class="product">
 
-                <div class="product-image">
-                    🎧
+                <img
+                    src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80"
+                    alt="Headphones">
+
+                <div class="product-info">
+
+                    <p>Electronics</p>
+
+                    <h3>Wireless Headphones</h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <h4>$35</h4>
+
+                    <button onclick="addToCart('Wireless Headphones')">
+                        Add to Cart
+                    </button>
+
                 </div>
-
-                <h3>Headphones</h3>
-
-                <p>$35</p>
-
-                <button>Add to Cart</button>
 
             </div>
 
 
+            <!-- Product 4 -->
             <div class="product">
 
-                <div class="product-image">
-                    ⌚
+                <img
+                    src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80"
+                    alt="Smart Watch">
+
+                <div class="product-info">
+
+                    <p>Electronics</p>
+
+                    <h3>Smart Watch</h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <h4>$60</h4>
+
+                    <button onclick="addToCart('Smart Watch')">
+                        Add to Cart
+                    </button>
+
                 </div>
-
-                <h3>Smart Watch</h3>
-
-                <p>$60</p>
-
-                <button>Add to Cart</button>
 
             </div>
 
@@ -142,31 +233,100 @@
 
 
     <!-- Offer -->
-    <section class="offer">
+    <section class="offer" id="offers">
 
-        <h2>Special Discount!</h2>
+        <div>
 
-        <p>Get up to 30% OFF on selected products.</p>
+            <p>LIMITED TIME OFFER</p>
 
-        <button>View Offers</button>
+            <h2>Get Up To 30% OFF</h2>
+
+            <p>
+                Shop now and save more on selected products.
+            </p>
+
+            <button onclick="showOffer()">
+                View Offers
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+
+        <h2>Stay Updated</h2>
+
+        <p>
+            Subscribe to receive our latest offers and updates.
+        </p>
+
+        <div>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email">
+
+            <button onclick="subscribe()">
+                Subscribe
+            </button>
+
+        </div>
 
     </section>
 
 
     <!-- Footer -->
-    <footer>
+    <footer id="contact">
 
-        <h2>StyleMart</h2>
+        <div class="footer-content">
 
-        <p>Online shopping made easy.</p>
+            <div>
+                <h2>Style<span>Mart</span></h2>
 
-        <p>© 2026 StyleMart</p>
+                <p>
+                    Your online shopping destination
+                    for fashion and electronics.
+                </p>
+            </div>
+
+
+            <div>
+                <h3>Quick Links</h3>
+
+                <a href="#home">Home</a>
+                <a href="#products">Products</a>
+                <a href="#offers">Offers</a>
+            </div>
+
+
+            <div>
+                <h3>Contact</h3>
+
+                <p>📧 support@stylemart.com</p>
+                <p>📞 +92 300 1234567</p>
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            <p>
+                © 2026 StyleMart. All Rights Reserved.
+            </p>
+
+        </div>
 
     </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 
 </body>
 
 </html>
-
-
-
